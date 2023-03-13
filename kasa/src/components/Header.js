@@ -1,7 +1,7 @@
 import '../styles/Header.css';
 
 function Header() {
-    return <h1>Kasa</h1>
+    return <img className="Logo" src="../images/logo.png" alt="logo entreprise kasa" />
 }
 
 export default Header

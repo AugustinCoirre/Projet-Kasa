@@ -1,7 +1,7 @@
-import Banner from './Banner'
+import Header from './Header'
 
 function App() {
-    return <Banner />
+    return <Header />
 }
 
 export default App

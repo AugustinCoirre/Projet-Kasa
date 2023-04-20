@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './styles/index.css';
+import './styles/Index.css';
 import Home from './pages/Home.jsx';
 import Fiche from './pages/Fiche.jsx';
 import ErrorPage from './pages/error-page';
@@ -14,7 +14,7 @@ const router = createBrowserRouter([
         errorElement: <ErrorPage />
     },
     {
-        path: '/fiche',
+        path: '/logement',
         element: <Fiche />
     }
 ]);

@@ -1,4 +1,4 @@
-#composant-cards {
+.composant-cards {
     width: 90%;
     margin-left: 5%;
     background-color: #f6f6f6;
@@ -11,7 +11,7 @@
 
 .card {
     height: 340px;
-    width: 340px;
+    width: 30%;
     overflow: hidden;
     position: relative;
     display: flex;
@@ -23,11 +23,16 @@
     background: linear-gradient(#fd6868 75%, rgb(0, 0, 0, 75%));
 }
 
+.card img {
+    width: 100%;
+    height: auto;
+}
+
 .card p {
     position: absolute;
     font-size: 15px;
-    bottom: 15px;
-    left: 25px;
+    /* bottom: 15px;
+    left: 25px; */
     color: white;
 }
 
@@ -42,5 +47,10 @@
         justify-content: space-around;
         flex-wrap: wrap;
         background-color: white;
+    }
+    .card p {
+        position: absolute;
+        font-size: 10px;
+        color: white;
     }
 }

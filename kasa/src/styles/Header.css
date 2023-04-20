@@ -1,21 +1,26 @@
 * {
     margin: 0;
-	padding: 0;
+    padding: 0;
 }
 
 #header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 2% 5% auto 5%;
-}
-
-.img-header {
-    
+    height: 80px;
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
 }
 
 .img-header .logo {
-    max-width: 50%;
+    max-width: 60%;
+}
+
+@media (max-width: 640px) {
+    .img-header .logo {
+        max-width: 70%;
+    }
 }
 
 .header-menu ul {
@@ -24,8 +29,8 @@
     justify-content: space-around;
 }
 
-.header-menu ul li{
+.header-menu ul li {
     list-style-type: none;
-    color: #FF6060;
-    padding: 10%;
+    color: #ff6060;
+    margin: 10px;
 }

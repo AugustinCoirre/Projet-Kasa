@@ -1,0 +1,36 @@
+.composant-banner {
+    height: 150px;
+    width: 90%;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 5%;
+    border-radius: 10px;
+    margin-top: 25px;
+}
+
+.composant-banner img {
+    width: 100%;
+    height: auto;
+    filter: contrast(50%);
+}
+
+.composant-banner p {
+    position: absolute;
+    font-size: 40px;
+    color: white;
+}
+
+@media (max-width: 640px) {
+    .composant-banner {
+        height: 100px;
+    }
+
+    .composant-banner p {
+        font-size: 20px;
+        width: 80%;
+        text-align: left;
+    }
+}

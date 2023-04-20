@@ -1,0 +1,46 @@
+#component-collapse {
+    width: 90%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.accordion {
+    transition: all 0.3s ease-in-out;
+    background-color: #ff6060;
+    border-radius: 10px;
+    width: 40%;
+}
+.accordion + .accordion {
+    margin-top: 0.25rem;
+}
+
+.accordion .accordion__title {
+    list-style-type: none;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 700;
+    color: white;
+    padding: 0.875rem 2.5rem 0.875rem 0.875rem;
+    background-image: url(../assets/arrow-down.png);
+    background-repeat: no-repeat;
+    background-position: right 0.75rem top 0.825rem;
+    background-size: 1.5rem;
+}
+.accordion .accordion__title::marker,
+.accordion .accordion__title::-webkit-details-marker {
+    display: none;
+}
+
+.accordion .accordion__content p {
+    background-color: #f7f7f7;
+}
+
+.accordion[open] {
+    color: #ff6060;
+}
+.accordion[open] .accordion__title {
+    background-image: url(../assets/arrow-up.png);
+}

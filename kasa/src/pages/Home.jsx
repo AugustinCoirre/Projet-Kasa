@@ -1,13 +1,18 @@
-import Header from '../components/Header'
-import Banner from '../components/Banner'
+import React from 'react';
+import Header from '../components/Header';
+import Banner from '../components/Banner';
+import Footer from '../components/Footer';
+import Cards from '../components/Cards';
 
-function App() {
+function Home() {
     return (
         <>
-             <Header />
-             <Banner />
+            <Header />
+            <Banner />
+            <Cards />
+            <Footer />
         </>
-    )
+    );
 }
 
-export default App
+export default Home;

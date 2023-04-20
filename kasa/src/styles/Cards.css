@@ -1,0 +1,46 @@
+#composant-cards {
+    width: 90%;
+    margin-left: 5%;
+    background-color: #f6f6f6;
+    border-radius: 10px;
+    margin-top: 25px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.card {
+    height: 340px;
+    width: 340px;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    background: linear-gradient(#fd6868 75%, rgb(0, 0, 0, 75%));
+}
+
+.card p {
+    position: absolute;
+    font-size: 15px;
+    bottom: 15px;
+    left: 25px;
+    color: white;
+}
+
+@media (max-width: 640px) {
+    .card {
+        width: 100%;
+    }
+    #composant-cards {
+        margin-top: 0px;
+        border-radius: 10px;
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        background-color: white;
+    }
+}

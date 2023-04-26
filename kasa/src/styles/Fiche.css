@@ -1,9 +1,3 @@
-body {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-}
-
 #composant-title {
     display: flex;
     justify-content: space-between;
@@ -11,19 +5,34 @@ body {
     margin-left: 5%;
     margin-top: 20px;
     color: #fd6868;
+    min-height: 110px;
 }
-.title-left {
+
+.left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.left .title {
     display: flex;
     flex-direction: column;
     align-items: start;
 }
 
-.title-left .title {
-    font-weight: bold;
+.left .title h3 {
     font-size: 40px;
 }
 
-.title-right {
+.right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+.right .profil {
     display: flex;
     flex-direction: row;
     align-items: start;
@@ -44,22 +53,14 @@ body {
     border-radius: 100%;
 }
 
-#class-star {
-    display: flex;
-    justify-content: space-between;
-    width: 90%;
-    margin-left: 5%;
-}
-
-#component-class {
+.tags {
     display: flex;
     flex-direction: row;
-    width: 50%;
     justify-content: start;
     margin-top: 10px;
 }
 
-.class {
+.tag {
     color: white;
     font-size: 14px;
     background-color: #fd6868;
@@ -75,4 +76,36 @@ body {
 .star {
     margin-right: 5px;
     width: 24px;
+}
+
+@media (max-width: 640px) {
+    #composant-title {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .left .title h3 {
+        font-size: 20px;
+    }
+    .left .title p {
+        font-size: 15px;
+    }
+
+    .tags {
+        flex-wrap: wrap;
+    }
+    .tag {
+        font-size: 11px;
+        width: 84px;
+        height: 18px;
+        margin-bottom: 5px;
+    }
+
+    .right {
+        margin-top: 15px;
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: flex-end;
+        justify-content: space-between;
+    }
 }

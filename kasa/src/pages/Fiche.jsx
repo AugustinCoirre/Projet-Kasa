@@ -19,30 +19,32 @@ function Fiche() {
             <Header />
             <Bannerlogement />
             <div id="composant-title">
-                <div className="title-left">
-                    <p className="title">Cozy loft on the Canal Saint-martin</p>
-                    <p>Paris, île-de-France</p>
+                <div className="left">
+                    <div className="title">
+                        <h3>Cozy loft on the Canal Saint-martin</h3>
+                        <p>Paris, île-de-France</p>
+                    </div>
+                    <div className="tags">
+                        <div className="tag">Cozy</div>
+                        <div className="tag">Canal</div>
+                        <div className="tag">Paris 10</div>
+                    </div>
                 </div>
-                <div className="title-right">
-                    <p className="name-profil">Alexandre Dumas</p>
-                    <img src={photoprofil} className="photo-profil"></img>
+                <div className="right">
+                    <div className="profil">
+                        <p className="name-profil">Alexandre Dumas</p>
+                        <img src={photoprofil} className="photo-profil"></img>
+                    </div>
+                    <div className="stars">
+                        <img src={staron} alt="etoile" className="star" />
+                        <img src={staron} alt="etoile" className="star" />
+                        <img src={staron} alt="etoile" className="star" />
+                        <img src={staroff} alt="etoile" className="star" />
+                        <img src={staroff} alt="etoile" className="star" />
+                    </div>
                 </div>
             </div>
-            <div id="class-star">
-                <div id="component-class">
-                    <div className="class">Cozy</div>
-                    <div className="class">Canal</div>
-                    <div className="class">Paris 10</div>
-                </div>
-                <div id="stars">
-                    <img src={staron} alt="etoile" className="star" />
-                    <img src={staron} alt="etoile" className="star" />
-                    <img src={staron} alt="etoile" className="star" />
-                    <img src={staroff} alt="etoile" className="star" />
-                    <img src={staroff} alt="etoile" className="star" />
-                </div>
-            </div>
-            <Collapse />
+            {/* <Collapse /> */}
             <Footer />
         </>
     );

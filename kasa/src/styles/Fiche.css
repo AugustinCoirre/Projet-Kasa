@@ -18,7 +18,7 @@
 .left .title {
     display: flex;
     flex-direction: column;
-    align-items: start;
+    align-items: flex-start;
 }
 
 .left .title h3 {
@@ -35,7 +35,7 @@
 .right .profil {
     display: flex;
     flex-direction: row;
-    align-items: start;
+    align-items: flex-start;
 }
 
 .name-profil {
@@ -62,7 +62,7 @@
 
 .tag {
     color: white;
-    font-size: 14px;
+    font-size: 12px;
     background-color: #fd6868;
     border-radius: 10px;
     width: 115px;

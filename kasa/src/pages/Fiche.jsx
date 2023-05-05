@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { useSearchParams } from 'react-router-dom';
 
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import Bannerlogement from '../components/Bannerlogement';
+import Carousel from '../components/Carousel';
 import Collapse from '../components/Collapse';
+import ErrorPage from '../pages/error-page';
 
 import logements from '../assets/logements.json';
 import photoprofil from '../assets/point.png';
@@ -11,29 +13,47 @@ import staron from '../assets/star-on.png';
 import staroff from '../assets/star-off.png';
 
 import '../styles/Fiche.css';
+import records from '../assets/logements.json';
 
 function Fiche() {
-    console.log(logements);
+    // récupère l'ID de l'URL
+    const [searchParams] = useSearchParams();
+    const [idLogement] = useState(searchParams.get('_id'));
+
+    // cherche l'id dans le fichier logements.json
+    const record = records.find(element => element.id === idLogement);
+
+    // si l'URL à été modifié manuellement, redirection vers la page d'erreur
+    if (!record) return <ErrorPage />;
+
     return (
         <>
             <Header />
-            <Bannerlogement />
+            <Carousel pictures={record.pictures} />
             <div id="composant-title">
                 <div className="left">
                     <div className="title">
-                        <h3>Cozy loft on the Canal Saint-martin</h3>
-                        <p>Paris, île-de-France</p>
+                        <h3>{record.title}</h3>
+                        <p>{record.location}</p>
                     </div>
                     <div className="tags">
-                        <div className="tag">Cozy</div>
-                        <div className="tag">Canal</div>
-                        <div className="tag">Paris 10</div>
+                        {record.tags.map((element, index) => {
+                            return (
+                                <p className="tag" key={'tag-' + index}>
+                                    {element}
+                                </p>
+                            );
+                        })}
                     </div>
                 </div>
                 <div className="right">
                     <div className="profil">
-                        <p className="name-profil">Alexandre Dumas</p>
-                        <img src={photoprofil} className="photo-profil"></img>
+                        <p className="name-profil">{record.host.name}</p>
+                        <img
+                            src={record.host.picture}
+                            alt={record.title}
+                            className="photo-profil"
+                        ></img>
                     </div>
                     <div className="stars">
                         <img src={staron} alt="etoile" className="star" />

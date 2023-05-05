@@ -15,6 +15,7 @@ const Cards = () => {
                 return (
                     <div className="card" key={logement.id}>
                         <Link
+                            className="card-img"
                             to={{
                                 pathname: '/Logement',
                                 search: '?_id=' + logement.id

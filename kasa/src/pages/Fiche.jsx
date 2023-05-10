@@ -15,6 +15,8 @@ import staroff from '../assets/star-off.png';
 import '../styles/Fiche.css';
 import records from '../assets/logements.json';
 
+const arrayStars = [1, 2, 3, 4, 5];
+
 function Fiche() {
     // récupère l'ID de l'URL
     const [searchParams] = useSearchParams();
@@ -56,11 +58,19 @@ function Fiche() {
                         ></img>
                     </div>
                     <div className="stars">
-                        <img src={staron} alt="etoile" className="star" />
-                        <img src={staron} alt="etoile" className="star" />
-                        <img src={staron} alt="etoile" className="star" />
-                        <img src={staroff} alt="etoile" className="star" />
-                        <img src={staroff} alt="etoile" className="star" />
+                        {arrayStars.map(element => {
+                            const nbreEtoiles = parseInt(record.rating);
+                            return (
+                                <span
+                                    key={'star-' + element}
+                                    className={
+                                        element <= nbreEtoiles
+                                            ? 'staron'
+                                            : 'staroff'
+                                    }
+                                ></span>
+                            );
+                        })}
                     </div>
                 </div>
             </div>

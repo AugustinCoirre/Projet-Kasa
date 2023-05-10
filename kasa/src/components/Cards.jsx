@@ -17,7 +17,7 @@ const Cards = () => {
                         <Link
                             className="card-img"
                             to={{
-                                pathname: '/Logement',
+                                pathname: '/logement',
                                 search: '?_id=' + logement.id
                             }}
                         >

@@ -28,21 +28,19 @@ function Carousel({ pictures }) {
             {totalPictures > 0 && (
                 <div>
                     {' '}
-                    {/* les boutons pour les chevrons droit et gauche, servent pour naviguer au sein du Carousel */}
+                    {/* les boutons pour les arrows left (-1) et right (+1)*/}
                     <button onClick={() => setIndex(index - 1)}>
-                        {index}
                         <img
                             src={ArrowLeft}
                             className="arrow-left"
-                            alt={'flèche gauche pour changer de photo ' + index}
+                            alt={'flèche gauche pour revenir à la photo d avant ' + index}
                         />
                     </button>
                     <button onClick={() => setIndex(index + 1)}>
-                        {index}
                         <img
                             src={ArrowRight}
                             className="arrow-right"
-                            alt={'flèche droite pour changer de photo ' + index}
+                            alt={'flèche droite pour passer a la photo d apres ' + index}
                         />
                     </button>
                 </div>

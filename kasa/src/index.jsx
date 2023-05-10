@@ -15,8 +15,18 @@ const router = createBrowserRouter([
     },
     {
         path: '/logement',
-        element: <Fiche />
-    }
+        element: <Fiche />,
+        errorElement: <ErrorPage />
+    },
+    {
+        path: '/about',
+        element: <About />,
+        errorElement: <ErrorPage />
+    },
+    {
+        path: '*',
+        element: <ErrorPage />
+    } // toutes les routes non trouvées -> ErrorPage
 ]);
 
 root.render(

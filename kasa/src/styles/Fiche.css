@@ -49,7 +49,7 @@
 .photo-profil {
     background-color: grey;
     width: 50px;
-    height: 40px;
+    height: 100%;
     border-radius: 100%;
 }
 
@@ -73,9 +73,30 @@
     margin-right: 10px;
 }
 
-.star {
-    margin-right: 5px;
-    width: 24px;
+.stars {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 130px;
+    height: 40px;
+    gap: 10px;
+}
+
+.staron {
+    background-image: url('../assets/star-on.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 64px;
+    width: 64px;
+}
+.staroff {
+    background-image: url('../assets/star-off.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 64px;
+    width: 64px;
 }
 
 @media (max-width: 640px) {

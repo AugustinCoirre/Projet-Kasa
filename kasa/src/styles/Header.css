@@ -17,20 +17,21 @@
     max-width: 60%;
 }
 
-@media (max-width: 640px) {
-    .img-header .logo {
-        max-width: 70%;
-    }
-}
-
 .header-menu ul {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    list-style: none;
+    gap: 20px;
 }
 
-.header-menu ul li {
-    list-style-type: none;
+.header-menu ul li a {
     color: #ff6060;
-    margin: 10px;
+    text-decoration: none;
+}
+
+@media (max-width: 640px) {
+    .img-header .logo {
+        max-width: 70%;
+    }
 }

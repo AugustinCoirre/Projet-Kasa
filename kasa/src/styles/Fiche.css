@@ -99,6 +99,14 @@
     width: 64px;
 }
 
+.collapseLogement {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    width: 90%;
+    margin-left: 5%;
+}
+
 @media (max-width: 640px) {
     #composant-title {
         display: flex;

@@ -1,38 +1,38 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../styles/Collapse.css';
+import ArrowUp from '../assets/arrow-up.png';
+import ArrowDown from '../assets/arrow-down.png';
 
-function Collapse() {
+function Collapse({ title, content }) {
+    // collapse par défaut fermer
+    const [contentVisible, setContentVisible] = useState(false);
+
+    // à chaque clic sur le collapse, ça inverse la valeur
+    const affContent = () => {
+        setContentVisible(!contentVisible); // inverse la valeur actuelle
+    };
+
+    // défini les classes selon si c'est visible ou hide
+    const collapseContent =
+        (contentVisible ? 'visible' : 'hidden') + ' collapse';
+    const collapseArrow = contentVisible ? ArrowUp : ArrowDown;
+
     return (
-        <div id="component-collapse">
-            <details class="accordion">
-                <summary class="accordion__title">Accordion title</summary>
-                <div class="accordion__content">
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Vivamus sodales, nulla sit amet porttitor rhoncus, lacus
-                        ex vestibulum libero, ac mollis neque ante id justo. Nam
-                        tempor euismod nisi ac ornare. Pellentesque id sapien
-                        lacinia, venenatis est aliquam, dignissim elit.
-                        Suspendisse potenti. Cras ut ante in libero tempus
-                        sodales sed quis dolor.
-                    </p>
+        <div className="collapse">
+            {/* affiche le titre et l'arrow */}
+            <div className="collapse__header" onClick={affContent}>
+                <span>{title}</span>
+                <div className="arrowValue">
+                    <img src={collapseArrow} alt="" />
                 </div>
-            </details>
-            <details class="accordion">
-                <summary class="accordion__title">Accordion title</summary>
-                <div class="accordion__content">
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Vivamus sodales, nulla sit amet porttitor rhoncus, lacus
-                        ex vestibulum libero, ac mollis neque ante id justo. Nam
-                        tempor euismod nisi ac ornare. Pellentesque id sapien
-                        lacinia, venenatis est aliquam, dignissim elit.
-                        Suspendisse potenti. Cras ut ante in libero tempus
-                        sodales sed quis dolor.
-                    </p>
-                </div>
-            </details>
+            </div>
+
+            {/* affiche le contenu */}
+            <div className={collapseContent}>
+                <ul>{content}</ul>
+            </div>
         </div>
     );
 }
+
 export default Collapse;

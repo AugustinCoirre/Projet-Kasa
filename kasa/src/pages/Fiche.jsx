@@ -28,6 +28,13 @@ function Fiche() {
     // si l'URL à été modifié manuellement, redirection vers la page d'erreur
     if (!record) return <ErrorPage />;
 
+    // récupère la liste des équipements
+    const equipements = record.equipments.map((element, index) => (
+        <li className="description-content" key={'equip-' + index.toString()}>
+            {element}
+        </li>
+    ));
+
     return (
         <>
             <Header />
@@ -74,7 +81,11 @@ function Fiche() {
                     </div>
                 </div>
             </div>
-            {/* <Collapse /> */}
+            {/* affiche la description et les équipements */}
+            <div className="collapseLogement">
+                <Collapse title="Description" content={record.description} />
+                <Collapse title="Equipements" content={equipements} />
+            </div>
             <Footer />
         </>
     );

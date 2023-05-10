@@ -4,6 +4,7 @@ import './styles/Index.css';
 import Home from './pages/Home.jsx';
 import Fiche from './pages/Fiche.jsx';
 import ErrorPage from './pages/error-page';
+import About from './pages/About';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

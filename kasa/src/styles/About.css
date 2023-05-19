@@ -4,6 +4,8 @@
     flex-direction: column;
     padding-inline: 108px;
     margin-top: 15px;
+    width: 90%;
+    margin-left: 5%;
 }
 
 .flex {
@@ -18,4 +20,3 @@
         padding-inline: 0;
     }
 }
-

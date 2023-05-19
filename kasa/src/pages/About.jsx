@@ -5,6 +5,7 @@ import Footer from '../components/Footer';
 import Collapse from '../components/Collapse';
 
 import '../styles/About.css';
+import imagebanner from '../assets/Background.jpg';
 
 function About() {
     // contenu qui sera affiché dans les Collapse
@@ -20,7 +21,7 @@ function About() {
         <>
             <div className="flex">
                 <Header />
-                <Banner></Banner>
+                <Banner imgBanner={imagebanner}></Banner>
                 <div className="about">
                     <div>
                         <Collapse title="Fiabilité" content={fiabilite} />

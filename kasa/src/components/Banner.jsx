@@ -1,13 +1,12 @@
 import '../styles/Banner.css';
 import React from 'react';
-import imagebanner from '../assets/fond-banner.png';
 
-function Banner() {
+function Banner({ imgBanner, textBanner }) {
     return (
         <>
             <div className="composant-banner">
-                <img src={imagebanner} alt="Photo bord de mer" />
-                <p>Chez vous, partout et ailleurs</p>
+                <img src={imgBanner} alt="Photo bord de mer" />
+                <p>{textBanner}</p>
             </div>
         </>
     );

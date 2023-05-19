@@ -21,6 +21,7 @@
     justify-content: center;
     align-items: center;
     border-radius: 10px;
+    margin-bottom: 20px;
 }
 
 .card-img {
@@ -64,7 +65,7 @@
     .card {
         width: 100%;
     }
-    #composant-cards {
+    .composant-cards {
         margin-top: 0px;
         border-radius: 10px;
         display: flex;
@@ -74,7 +75,8 @@
     }
     .card p {
         position: absolute;
-        font-size: 10px;
+        font-size: 14px;
+        width: 150px;
         color: white;
     }
 }

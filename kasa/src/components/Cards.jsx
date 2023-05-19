@@ -22,6 +22,7 @@ const Cards = () => {
                             }}
                         >
                             <img src={logement.cover} alt={logement.title} />
+                            <div class="card-img-opa"></div>
                             <p>{logement.title}</p>
                         </Link>
                     </div>

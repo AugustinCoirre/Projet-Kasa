@@ -37,54 +37,59 @@ function Fiche() {
 
     return (
         <>
-            <Header />
-            <Carousel pictures={record.pictures} />
-            <div id="composant-title">
-                <div className="left">
-                    <div className="title">
-                        <h3>{record.title}</h3>
-                        <p>{record.location}</p>
+            <div class="flex">
+                <Header />
+                <Carousel pictures={record.pictures} />
+                <div id="composant-title">
+                    <div className="left">
+                        <div className="title">
+                            <h3>{record.title}</h3>
+                            <p>{record.location}</p>
+                        </div>
+                        <div className="tags">
+                            {record.tags.map((element, index) => {
+                                return (
+                                    <p className="tag" key={'tag-' + index}>
+                                        {element}
+                                    </p>
+                                );
+                            })}
+                        </div>
                     </div>
-                    <div className="tags">
-                        {record.tags.map((element, index) => {
-                            return (
-                                <p className="tag" key={'tag-' + index}>
-                                    {element}
-                                </p>
-                            );
-                        })}
+                    <div className="right">
+                        <div className="profil">
+                            <p className="name-profil">{record.host.name}</p>
+                            <img
+                                src={record.host.picture}
+                                alt={record.title}
+                                className="photo-profil"
+                            ></img>
+                        </div>
+                        <div className="stars">
+                            {arrayStars.map(element => {
+                                const nbreEtoiles = parseInt(record.rating);
+                                return (
+                                    <span
+                                        key={'star-' + element}
+                                        className={
+                                            element <= nbreEtoiles
+                                                ? 'staron'
+                                                : 'staroff'
+                                        }
+                                    ></span>
+                                );
+                            })}
+                        </div>
                     </div>
                 </div>
-                <div className="right">
-                    <div className="profil">
-                        <p className="name-profil">{record.host.name}</p>
-                        <img
-                            src={record.host.picture}
-                            alt={record.title}
-                            className="photo-profil"
-                        ></img>
-                    </div>
-                    <div className="stars">
-                        {arrayStars.map(element => {
-                            const nbreEtoiles = parseInt(record.rating);
-                            return (
-                                <span
-                                    key={'star-' + element}
-                                    className={
-                                        element <= nbreEtoiles
-                                            ? 'staron'
-                                            : 'staroff'
-                                    }
-                                ></span>
-                            );
-                        })}
-                    </div>
+                {/* affiche la description et les équipements */}
+                <div className="collapseLogement">
+                    <Collapse
+                        title="Description"
+                        content={record.description}
+                    />
+                    <Collapse title="Equipements" content={equipements} />
                 </div>
-            </div>
-            {/* affiche la description et les équipements */}
-            <div className="collapseLogement">
-                <Collapse title="Description" content={record.description} />
-                <Collapse title="Equipements" content={equipements} />
             </div>
             <Footer />
         </>

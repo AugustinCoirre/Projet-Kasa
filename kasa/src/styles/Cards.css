@@ -21,11 +21,6 @@
     justify-content: center;
     align-items: center;
     border-radius: 10px;
-    background-image: linear-gradient(
-        to bottom,
-        rgba(0, 0, 0, 0.1),
-        rgba(0, 0, 0, 0.4)
-    );
 }
 
 .card-img {
@@ -41,6 +36,19 @@
 .card img {
     width: auto;
     height: 100%;
+}
+
+.card-img-opa {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background-image: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0),
+        rgba(0, 0, 0, 0.2),
+        rgba(0, 0, 0, 0.2),
+        rgba(0, 0, 0, 0.8)
+    );
 }
 
 .card p {
